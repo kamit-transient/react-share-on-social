@@ -14,7 +14,7 @@ export default function Icon({ id, shareData, onClose, onClick, noReferer }: Ico
       encodeURIComponent(shareData.textToShare),
       encodeURIComponent(shareData.linkTitle)
     );
-    window && window.open(uri, id, windowFeatures + `${noReferer ? " noreferer" : ""}`);
+    globalThis && globalThis.open(uri, id, windowFeatures + `${noReferer ? " noreferer" : ""}`);
     onClose();
   };
 
